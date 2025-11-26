@@ -35,20 +35,18 @@ int main() {
     // Output data
     printf("\n=== DATA MAHASISWA ===\n");
 
+    printf("\n%-5s %-15s %-15s %-5s %-20s %-10s\n",
+       "No", "Nama", "NIM", "IPK", "Jurusan", "Status");
+
     for (int i = 0; i < jumlah; i++) {
-        printf("\nMahasiswa ke-%d\n", i + 1);
-        printf("Nama    : %s\n", nama[i]);
-        printf("NIM     : %s\n", nim[i]);
-        printf("IPK     : %.2f\n", ipk[i]);
-        printf("Jurusan : %s\n", jurusan[i]);
 
         char *statusText;
         if (status[i] == 0) statusText = "Cuti";
         else if (status[i] == 1) statusText = "Aktif";
         else statusText = "Lulus";
 
-        printf("Status  : %s\n", statusText);
-    }
+        printf("%-5d %-15s %-15s %-5.2f %-20s %-10s\n",
+             i + 1, nama[i], nim[i], ipk[i], jurusan[i], statusText);
+}
 
-    return 0;
 }
